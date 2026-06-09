@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arati | DevOps Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body {background:#0f172a;color:white;scroll-behavior:smooth;}
+
+nav {
+position:fixed;width:100%;background:#020617;
+display:flex;justify-content:space-between;padding:15px 40px;z-index:1000;
+}
+nav a {color:white;text-decoration:none;margin:0 15px;}
+
+.hero {
+height:100vh;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+background:linear-gradient(135deg,#4f46e5,#9333ea);
+text-align:center;
+}
+
+.hero h1 {font-size:3rem;}
+.typing {color:#ffd700;}
+
+.btn {
+margin-top:20px;padding:10px 20px;background:white;color:black;border-radius:20px;
+text-decoration:none;
+}
+
+section {padding:80px 20px;text-align:center;}
+
+.cards {display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+
+.card {
+background:#1e293b;padding:20px;border-radius:10px;width:260px;
+transition:0.3s;
+}
+.card:hover {transform:translateY(-10px);}
+
+.skills {max-width:600px;margin:auto;text-align:left;}
+.skill {margin:15px 0;}
+.bar {height:10px;background:#334155;border-radius:5px;}
+.fill {height:10px;background:#4f46e5;border-radius:5px;}
+
+.timeline {max-width:600px;margin:auto;text-align:left;}
+.timeline div {margin:15px 0;}
+
+form input,form textarea {
+width:100%;padding:10px;margin:10px 0;border:none;border-radius:5px;
+}
+
+form button {
+padding:10px 20px;background:#4f46e5;color:white;border:none;border-radius:5px;
+}
+
+footer {background:#020617;padding:20px;}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<h2>Arati</h2>
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Hello, I'm Arati 👋</h1>
+<h2 class="typing" id="typing"></h2>
+<a href="#projects" class="btn">View Projects</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p>I am an aspiring DevOps Engineer passionate about cloud, automation, and infrastructure using AWS and Terraform.</p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects 🚀</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Terraform AWS Infra</h3>
+<p>Built scalable infra using Terraform</p>
+</div>
+
+<div class="card">
+<h3>Serverless Blog</h3>
+<p>AWS Lambda + S3 + DynamoDB</p>
+</div>
+
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Hosted on GitHub Pages</p>
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills 💡</h2>
+
+<div class="skills">
+<div class="skill">Terraform<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div class="skill">AWS<div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="skill">Docker<div class="bar"><div class="fill" style="width:70%"></div></div></div>
+<div class="skill">Linux<div class="bar"><div class="fill" style="width:75%"></div></div></div>
+<div class="skill">Git<div class="bar"><div class="fill" style="width:80%"></div></div></div>
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+<section>
+<h2>Journey 📈</h2>
+<div class="timeline">
+<div>🎓MCA Student</div>
+<div>☁️  AWS & Terraform</div>
+<div>💻 Building DevOps Projects</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Me 📩</h2>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Your Message"></textarea>
+<button>Send</button>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Arati | DevOps Portfolio</p>
+</footer>
+
+<!-- JS -->
+<script>
+const text = ["DevOps Engineer", "AWS Enthusiast", "Terraform Learner"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+current=text[i];
+document.getElementById("typing").innerText=current.substring(0,j);
+
+if(!isDeleting){j++; if(j==current.length)isDeleting=true;}
+else{j--; if(j==0){isDeleting=false;i=(i+1)%text.length;}}
+
+setTimeout(type,100);
+}
+type();
+</script>
+
+</body>
+</html>
